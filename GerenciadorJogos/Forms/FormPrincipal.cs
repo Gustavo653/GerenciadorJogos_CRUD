@@ -33,7 +33,7 @@ namespace GerenciadorJogos
         {
             this.Visible = false; //Oculta o formulário
             MessageBox.Show("Obrigado por usar nosso programa :D", "Volte sempre!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Close();
+            Application.Exit();
         }
 
         private void btnInstrucoes_Click(object sender, EventArgs e)
@@ -54,7 +54,9 @@ namespace GerenciadorJogos
             string escolha = cboOpcoes.Text;
             if (escolha == "Cadastrar")
             {
-
+                FormCadastrar newformCadastrar = new FormCadastrar();
+                this.Visible = false;
+                newformCadastrar.Show();
             }
             else if (escolha == "Excluir")
             {
