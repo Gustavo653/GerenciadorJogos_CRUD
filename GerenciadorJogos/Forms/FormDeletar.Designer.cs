@@ -31,11 +31,11 @@ namespace GerenciadorJogos.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDeletar));
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnRemoverJogo = new System.Windows.Forms.Button();
+            this.cboNome = new System.Windows.Forms.ComboBox();
+            this.cboCodigo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnVoltar
@@ -48,13 +48,6 @@ namespace GerenciadorJogos.Forms
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(95, 29);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 23);
-            this.txtCodigo.TabIndex = 17;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -63,13 +56,6 @@ namespace GerenciadorJogos.Forms
             this.label4.Size = new System.Drawing.Size(40, 15);
             this.label4.TabIndex = 16;
             this.label4.Text = "Nome";
-            // 
-            // txtNome
-            // 
-            this.txtNome.Location = new System.Drawing.Point(95, 58);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 23);
-            this.txtNome.TabIndex = 15;
             // 
             // label1
             // 
@@ -90,15 +76,33 @@ namespace GerenciadorJogos.Forms
             this.btnRemoverJogo.UseVisualStyleBackColor = true;
             this.btnRemoverJogo.Click += new System.EventHandler(this.btnRemoverJogo_Click);
             // 
+            // cboNome
+            // 
+            this.cboNome.FormattingEnabled = true;
+            this.cboNome.Location = new System.Drawing.Point(95, 59);
+            this.cboNome.Name = "cboNome";
+            this.cboNome.Size = new System.Drawing.Size(121, 23);
+            this.cboNome.TabIndex = 19;
+            this.cboNome.SelectedIndexChanged += new System.EventHandler(this.cboNome_SelectedIndexChanged);
+            // 
+            // cboCodigo
+            // 
+            this.cboCodigo.Enabled = false;
+            this.cboCodigo.FormattingEnabled = true;
+            this.cboCodigo.Location = new System.Drawing.Point(95, 29);
+            this.cboCodigo.Name = "cboCodigo";
+            this.cboCodigo.Size = new System.Drawing.Size(121, 23);
+            this.cboCodigo.TabIndex = 20;
+            // 
             // FormDeletar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 123);
+            this.Controls.Add(this.cboCodigo);
+            this.Controls.Add(this.cboNome);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRemoverJogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -113,10 +117,10 @@ namespace GerenciadorJogos.Forms
         #endregion
 
         private System.Windows.Forms.Button btnVoltar;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRemoverJogo;
+        private System.Windows.Forms.ComboBox cboNome;
+        private System.Windows.Forms.ComboBox cboCodigo;
     }
 }
