@@ -73,7 +73,9 @@ namespace GerenciadorJogos
             }
             else if (escolha == "Localizar")
             {
-
+                FormLocalizar newFormLocalizar = new FormLocalizar();
+                this.Visible = false;
+                newFormLocalizar.Show();
             }
             else if (escolha == "Listar jogos")
             {

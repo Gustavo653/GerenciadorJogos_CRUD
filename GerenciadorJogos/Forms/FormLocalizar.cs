@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace GerenciadorJogos.Forms
 {
-    public partial class FormDeletar : Form
+    public partial class FormLocalizar : Form
     {
-        public FormDeletar()
+        public FormLocalizar()
         {
             InitializeComponent();
         }
@@ -24,23 +24,10 @@ namespace GerenciadorJogos.Forms
             this.Visible = false; ;
             newFormPrincipal.Show();
         }
-        private void btnRemoverJogo_Click(object sender, EventArgs e)
-        {
-            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
-            string delete = "DELETE from dbo.Jogos WHERE nome = '" + cboNome.Text + "' AND codigo = '" + cboCodigo.Text + "'";
-            SqlCommand cmd = new SqlCommand(delete, conn);
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Jogo removido com sucesso!", "Jogo removido!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            FormPrincipal newFormPrincipal = new FormPrincipal();
-            this.Visible = false; ;
-            newFormPrincipal.Show();
-        }
 
-        private void FormDeletar_Load(object sender, EventArgs e)
+        private void FormLocalizar_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Para remover um jogo, selecione o nome.", "Instruções", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Para pesquisar um jogo, selecione o nome.", "Instruções", MessageBoxButtons.OK, MessageBoxIcon.Information);
             List<int> codigos = new List<int>();
             List<string> nomes = new List<string>();
             SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
@@ -61,6 +48,25 @@ namespace GerenciadorJogos.Forms
         private void cboNome_SelectedIndexChanged(object sender, EventArgs e)
         {
             cboCodigo.SelectedIndex = cboNome.SelectedIndex;
+        }
+
+        private void btnBuscarJogo_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+            conn.Open();
+            string select = "SELECT * FROM dbo.Jogos WHERE codigo = '" + cboCodigo.Text + "'";
+            SqlCommand cmd = new SqlCommand(select, conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lstDados.Items.Add("Nome: " + dr["nome"]);
+                lstDados.Items.Add("Descricao: " + dr["descricao"]);
+                lstDados.Items.Add("Código: " + dr["codigo"]);
+                lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"]));
+                lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"]));
+                lstDados.Items.Add("///////////////////////////");
+            }
+            conn.Close();
         }
     }
 }
