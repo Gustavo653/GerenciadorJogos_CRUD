@@ -26,7 +26,7 @@ namespace GerenciadorJogos.Forms
         }
         private void btnRemoverJogo_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
             string delete = "DELETE from dbo.Jogos WHERE nome = '" + cboNome.Text + "' AND codigo = '" + cboCodigo.Text + "'";
             SqlCommand cmd = new SqlCommand(delete, conn);
             conn.Open();
@@ -43,7 +43,7 @@ namespace GerenciadorJogos.Forms
             MessageBox.Show("Para remover um jogo, selecione o nome.", "Instruções", MessageBoxButtons.OK, MessageBoxIcon.Information);
             List<int> codigos = new List<int>();
             List<string> nomes = new List<string>();
-            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
             conn.Open();
             string select = "SELECT * FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
