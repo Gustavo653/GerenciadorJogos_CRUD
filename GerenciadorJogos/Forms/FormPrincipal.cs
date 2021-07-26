@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using GerenciadorJogos.Forms;
 
 namespace GerenciadorJogos
 {
@@ -54,17 +55,21 @@ namespace GerenciadorJogos
             string escolha = cboOpcoes.Text;
             if (escolha == "Cadastrar")
             {
-                FormCadastrar newformCadastrar = new FormCadastrar();
+                FormCadastrar newFormCadastrar = new FormCadastrar();
                 this.Visible = false;
-                newformCadastrar.Show();
+                newFormCadastrar.Show();
             }
             else if (escolha == "Excluir")
             {
-
+                FormDeletar newFormDeletar = new FormDeletar();
+                this.Visible = false;
+                newFormDeletar.Show();
             }
             else if (escolha == "Alterar")
             {
-
+                FormAlterar newFormAlterar = new FormAlterar();
+                this.Visible = false;
+                newFormAlterar.Show();
             }
             else if (escolha == "Localizar")
             {
@@ -79,6 +84,11 @@ namespace GerenciadorJogos
                 MessageBox.Show("O item escolhido é inválido, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cboOpcoes.Text = "";
             }
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            cboOpcoes.SelectedIndex = 0;
         }
     }
 }
