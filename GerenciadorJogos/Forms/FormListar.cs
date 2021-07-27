@@ -48,7 +48,7 @@ namespace GerenciadorJogos
                 //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
                 SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
                 conn.Open();
-                string select = "SELECT * FROM dbo.Jogos WHERE console = '" + idConsole + "' AND genero = '" + idGenero + "'";  
+                string select = "SELECT codigo, nome, descricao FROM dbo.Jogos WHERE console = '" + idConsole + "' AND genero = '" + idGenero + "'";  
                 SqlCommand cmd = new SqlCommand(select, conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Close();
