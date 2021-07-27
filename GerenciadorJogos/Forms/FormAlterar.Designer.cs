@@ -29,6 +29,7 @@ namespace GerenciadorJogos.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlterar));
             this.btnVoltar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.cboGenero = new System.Windows.Forms.ComboBox();
@@ -63,6 +64,7 @@ namespace GerenciadorJogos.Forms
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(95, 208);
             this.cboGenero.Name = "cboGenero";
@@ -115,6 +117,7 @@ namespace GerenciadorJogos.Forms
             // 
             // cboConsole
             // 
+            this.cboConsole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboConsole.FormattingEnabled = true;
             this.cboConsole.Location = new System.Drawing.Point(95, 175);
             this.cboConsole.Name = "cboConsole";
@@ -164,6 +167,7 @@ namespace GerenciadorJogos.Forms
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAlterarJogo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAlterar";
             this.Text = "Alterar jogo";
             this.Load += new System.EventHandler(this.FormAlterar_Load);

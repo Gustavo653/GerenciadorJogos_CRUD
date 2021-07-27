@@ -57,8 +57,8 @@ namespace GerenciadorJogos.Forms
                     lstDados.Items.Add("Nome: " + dr["nome"]);
                     lstDados.Items.Add("Descricao: " + dr["descricao"]);
                     lstDados.Items.Add("Código: " + dr["codigo"]);
-                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"]));
-                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"]));
+                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"])); //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING
+                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"])); //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING
                     lstDados.Items.Add("///////////////////////////");
                 }
                 conn.Close();
@@ -76,8 +76,8 @@ namespace GerenciadorJogos.Forms
                     lstDados.Items.Add("Nome: " + dr["nome"]);
                     lstDados.Items.Add("Descricao: " + dr["descricao"]);
                     lstDados.Items.Add("Código: " + dr["codigo"]);
-                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"]));
-                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"]));
+                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"])); //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING
+                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"])); //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING //CONVERTER NUMERO PARA STRING
                     lstDados.Items.Add("///////////////////////////");
                 }
                 conn.Close();

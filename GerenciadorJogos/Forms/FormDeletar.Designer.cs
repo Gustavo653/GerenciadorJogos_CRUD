@@ -78,6 +78,7 @@ namespace GerenciadorJogos.Forms
             // 
             // cboNome
             // 
+            this.cboNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNome.FormattingEnabled = true;
             this.cboNome.Location = new System.Drawing.Point(95, 59);
             this.cboNome.Name = "cboNome";

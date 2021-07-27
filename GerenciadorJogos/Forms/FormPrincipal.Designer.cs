@@ -49,6 +49,7 @@ namespace GerenciadorJogos
             // 
             // cboOpcoes
             // 
+            this.cboOpcoes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboOpcoes.FormattingEnabled = true;
             this.cboOpcoes.Items.AddRange(new object[] {
             "Cadastrar",

@@ -29,6 +29,7 @@ namespace GerenciadorJogos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListar));
             this.ckbListarTodos = new System.Windows.Forms.CheckBox();
             this.cboGenero = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@ namespace GerenciadorJogos
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Items.AddRange(new object[] {
             "Todos"});
@@ -81,6 +83,7 @@ namespace GerenciadorJogos
             // 
             // cboConsole
             // 
+            this.cboConsole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboConsole.FormattingEnabled = true;
             this.cboConsole.Items.AddRange(new object[] {
             "Todos"});
@@ -113,6 +116,7 @@ namespace GerenciadorJogos
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 102);
             this.dataGridView1.Name = "dataGridView1";
@@ -121,7 +125,7 @@ namespace GerenciadorJogos
             this.dataGridView1.Size = new System.Drawing.Size(403, 144);
             this.dataGridView1.TabIndex = 48;
             // 
-            // FormTeste
+            // FormListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +138,9 @@ namespace GerenciadorJogos
             this.Controls.Add(this.cboConsole);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnListarJogos);
-            this.Name = "FormTeste";
-            this.Text = "FormTeste";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormListar";
+            this.Text = "Listar Jogo";
             this.Load += new System.EventHandler(this.FormTeste_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

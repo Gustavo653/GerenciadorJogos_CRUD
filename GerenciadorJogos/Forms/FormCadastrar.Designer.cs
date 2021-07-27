@@ -72,6 +72,7 @@ namespace GerenciadorJogos
             // 
             // cboConsole
             // 
+            this.cboConsole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboConsole.FormattingEnabled = true;
             this.cboConsole.Location = new System.Drawing.Point(86, 171);
             this.cboConsole.Name = "cboConsole";
@@ -124,6 +125,7 @@ namespace GerenciadorJogos
             // 
             // cboGenero
             // 
+            this.cboGenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGenero.FormattingEnabled = true;
             this.cboGenero.Location = new System.Drawing.Point(86, 204);
             this.cboGenero.Name = "cboGenero";

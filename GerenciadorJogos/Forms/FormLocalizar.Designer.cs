@@ -29,26 +29,20 @@ namespace GerenciadorJogos.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstDados = new System.Windows.Forms.ListBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLocalizar));
             this.cboCodigo = new System.Windows.Forms.ComboBox();
             this.cboNome = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarJogo = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lstDados
-            // 
-            this.lstDados.FormattingEnabled = true;
-            this.lstDados.ItemHeight = 15;
-            this.lstDados.Location = new System.Drawing.Point(12, 119);
-            this.lstDados.Name = "lstDados";
-            this.lstDados.Size = new System.Drawing.Size(403, 124);
-            this.lstDados.TabIndex = 0;
             // 
             // cboCodigo
             // 
+            this.cboCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCodigo.Enabled = false;
             this.cboCodigo.FormattingEnabled = true;
             this.cboCodigo.Location = new System.Drawing.Point(95, 22);
@@ -58,6 +52,7 @@ namespace GerenciadorJogos.Forms
             // 
             // cboNome
             // 
+            this.cboNome.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboNome.FormattingEnabled = true;
             this.cboNome.Location = new System.Drawing.Point(95, 52);
             this.cboNome.Name = "cboNome";
@@ -103,34 +98,47 @@ namespace GerenciadorJogos.Forms
             this.btnBuscarJogo.UseVisualStyleBackColor = true;
             this.btnBuscarJogo.Click += new System.EventHandler(this.btnBuscarJogo_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 105);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(403, 141);
+            this.dataGridView1.TabIndex = 27;
+            // 
             // FormLocalizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 258);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cboCodigo);
             this.Controls.Add(this.cboNome);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscarJogo);
-            this.Controls.Add(this.lstDados);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLocalizar";
-            this.Text = "FormLocalizar";
+            this.Text = "Localizar Jogo";
             this.Load += new System.EventHandler(this.FormLocalizar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lstDados;
         private System.Windows.Forms.ComboBox cboCodigo;
         private System.Windows.Forms.ComboBox cboNome;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscarJogo;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
