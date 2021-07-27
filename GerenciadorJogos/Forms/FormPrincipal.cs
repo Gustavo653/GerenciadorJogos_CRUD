@@ -79,9 +79,12 @@ namespace GerenciadorJogos
             }
             else if (escolha == "Listar jogos")
             {
-                FormListar newFormListar = new FormListar();
+                FormListar newFormCadastrar = new FormListar();
                 this.Visible = false;
-                newFormListar.Show();
+                newFormCadastrar.Show();             
+                //FormListar newFormListar = new FormListar(); //Form usando lista
+                //this.Visible = false;
+                //newFormListar.Show();
             }
             else
             {

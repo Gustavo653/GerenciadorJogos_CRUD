@@ -9,16 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorJogos
+namespace GerenciadorJogos.Forms
 {
-    public partial class FormListar : Form
+    public partial class INATIVOFormListarLISTA : Form
     {
-        public FormListar()
+        public INATIVOFormListarLISTA()
         {
             InitializeComponent();
         }
 
-        private void FormTeste_Load(object sender, EventArgs e)
+        private void FormListar_Load(object sender, EventArgs e)
         {
             cboConsole.DataSource = Enum.GetValues(typeof(TipoConsole)); //Adiciona o enum de console na combobox console
             cboGenero.DataSource = Enum.GetValues(typeof(TipoGenero)); //Adiciona o enum de gênero na combobox gênero
@@ -26,6 +26,7 @@ namespace GerenciadorJogos
 
         private void btnListarJogos_Click(object sender, EventArgs e)
         {
+            lstDados.Items.Clear();
             if (cboConsole.Text != "" && cboGenero.Text != "" && ckbListarTodos.CheckState == CheckState.Unchecked)
             {
                 int idConsole = 0, idGenero = 0;
@@ -50,13 +51,18 @@ namespace GerenciadorJogos
                 conn.Open();
                 string select = "SELECT * FROM dbo.Jogos WHERE console = '" + idConsole + "' AND genero = '" + idGenero + "'";
                 SqlCommand cmd = new SqlCommand(select, conn);
-                cmd.CommandType = CommandType.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lstDados.Items.Add("Nome: " + dr["nome"]);
+                    lstDados.Items.Add("Descricao: " + dr["descricao"]);
+                    lstDados.Items.Add("Código: " + dr["codigo"]);
+                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"]));
+                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"]));
+                    lstDados.Items.Add("///////////////////////////");
+                }
                 conn.Close();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable jogos = new DataTable();
-                da.Fill(jogos);
-                dataGridView1.DataSource = jogos;
-            }
+            }                     
             if (ckbListarTodos.CheckState == CheckState.Checked)
             {
                 //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
@@ -64,12 +70,17 @@ namespace GerenciadorJogos
                 conn.Open();
                 string select = "SELECT * FROM dbo.Jogos";
                 SqlCommand cmd = new SqlCommand(select, conn);
-                cmd.CommandType = CommandType.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lstDados.Items.Add("Nome: " + dr["nome"]);
+                    lstDados.Items.Add("Descricao: " + dr["descricao"]);
+                    lstDados.Items.Add("Código: " + dr["codigo"]);
+                    lstDados.Items.Add("Console: " + ((TipoConsole)dr["console"]));
+                    lstDados.Items.Add("Gênero: " + ((TipoGenero)dr["genero"]));
+                    lstDados.Items.Add("///////////////////////////");
+                }
                 conn.Close();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable jogos = new DataTable();
-                da.Fill(jogos);
-                dataGridView1.DataSource = jogos;
             }
         }
 
