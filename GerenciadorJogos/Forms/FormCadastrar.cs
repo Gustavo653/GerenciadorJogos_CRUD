@@ -56,7 +56,8 @@ namespace GerenciadorJogos
                         break;
                     }
                 }
-                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
                 string insert = "INSERT into dbo.Jogos (codigo, nome, descricao, console, genero) values ('" + txtCodigo.Text + "', '" + txtNome.Text + "', '" + txtDescricao.Text + "', '" + idConsole + "', '" + idGenero + "')";
                 SqlCommand cmd = new SqlCommand(insert, conn);
                 conn.Open();
@@ -104,8 +105,8 @@ namespace GerenciadorJogos
         private static List<string> ReceberCodigosBD()
         {
             List<string> codigo = new List<string>();
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            conn.Open();
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); conn.Open();
             string select = "SELECT codigo FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
             SqlDataReader dr = cmd.ExecuteReader();

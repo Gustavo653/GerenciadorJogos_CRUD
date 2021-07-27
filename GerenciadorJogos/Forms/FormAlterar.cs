@@ -51,7 +51,8 @@ namespace GerenciadorJogos.Forms
                     break;
                 }
             }
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); 
             string update = "UPDATE dbo.Jogos Set nome = '" + txtNome.Text + "', descricao = '" + txtDescricao.Text + "', console = '" + idConsole + "', genero = '" + idGenero + "' WHERE codigo = '" + txtCodigo.Text + "'";
             SqlCommand cmd = new SqlCommand(update, conn);
             conn.Open();
@@ -61,8 +62,8 @@ namespace GerenciadorJogos.Forms
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            conn.Open();
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); conn.Open();
             string select = "SELECT codigo, nome, descricao, console, genero FROM dbo.Jogos WHERE codigo = '" + txtCodigo.Text + "'";
             SqlCommand cmd = new SqlCommand(select, conn);
             SqlDataReader dr = cmd.ExecuteReader();

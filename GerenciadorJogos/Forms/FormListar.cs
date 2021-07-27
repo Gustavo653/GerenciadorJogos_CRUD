@@ -46,7 +46,8 @@ namespace GerenciadorJogos.Forms
                         break;
                     }
                 }
-                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
                 conn.Open();
                 string select = "SELECT * FROM dbo.Jogos WHERE console = '" + idConsole + "' AND genero = '" + idGenero + "'";
                 SqlCommand cmd = new SqlCommand(select, conn);
@@ -64,7 +65,8 @@ namespace GerenciadorJogos.Forms
             }                     
             if (ckbListarTodos.CheckState == CheckState.Checked)
             {
-                SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
                 conn.Open();
                 string select = "SELECT * FROM dbo.Jogos";
                 SqlCommand cmd = new SqlCommand(select, conn);
@@ -94,6 +96,13 @@ namespace GerenciadorJogos.Forms
                 cboConsole.Enabled = true;
                 cboGenero.Enabled = true;
             }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormPrincipal newFormPrincipal = new FormPrincipal();
+            newFormPrincipal.Show();
+            this.Visible = false;
         }
     }
 }

@@ -30,8 +30,8 @@ namespace GerenciadorJogos.Forms
             MessageBox.Show("Para pesquisar um jogo, selecione o nome.", "Instruções", MessageBoxButtons.OK, MessageBoxIcon.Information);
             List<int> codigos = new List<int>();
             List<string> nomes = new List<string>();
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            conn.Open();
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); conn.Open();
             string select = "SELECT * FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -52,7 +52,8 @@ namespace GerenciadorJogos.Forms
 
         private void btnBuscarJogo_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
             conn.Open();
             string select = "SELECT * FROM dbo.Jogos WHERE codigo = '" + cboCodigo.Text + "'";
             SqlCommand cmd = new SqlCommand(select, conn);
