@@ -57,7 +57,8 @@ namespace GerenciadorJogos
                     }
                 }
                 //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-                SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+                //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+                SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
                 string insert = "INSERT into dbo.Jogos (codigo, nome, descricao, console, genero) values ('" + txtCodigo.Text + "', '" + txtNome.Text + "', '" + txtDescricao.Text + "', '" + idConsole + "', '" + idGenero + "')";
                 SqlCommand cmd = new SqlCommand(insert, conn);
                 conn.Open();
@@ -106,7 +107,9 @@ namespace GerenciadorJogos
         {
             List<string> codigo = new List<string>();
             //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); conn.Open();
+            //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
+            conn.Open();
             string select = "SELECT codigo FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
             SqlDataReader dr = cmd.ExecuteReader();

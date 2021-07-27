@@ -15,10 +15,4 @@
     <Folder Include="Icones\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="Database1.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
