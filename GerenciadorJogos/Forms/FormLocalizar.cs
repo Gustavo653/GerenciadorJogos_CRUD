@@ -31,8 +31,7 @@ namespace GerenciadorJogos.Forms
             List<int> codigos = new List<int>();
             List<string> nomes = new List<string>();
             //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); 
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021"); 
             conn.Open();
             string select = "SELECT nome, codigo FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
@@ -55,8 +54,7 @@ namespace GerenciadorJogos.Forms
         private void btnBuscarJogo_Click(object sender, EventArgs e)
         {
             //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
             conn.Open();
             string select = "SELECT codigo, nome, descricao, console, genero FROM dbo.Jogos WHERE codigo = '" + cboCodigo.Text + "'";
             SqlCommand cmd = new SqlCommand(select, conn);

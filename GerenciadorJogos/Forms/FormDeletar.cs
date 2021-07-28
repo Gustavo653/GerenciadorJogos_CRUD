@@ -27,9 +27,8 @@ namespace GerenciadorJogos.Forms
         private void btnRemoverJogo_Click(object sender, EventArgs e)
         {
             //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
             string delete = "DELETE from dbo.Jogos WHERE nome = '" + cboNome.Text + "' AND codigo = '" + cboCodigo.Text + "'";
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
             SqlCommand cmd = new SqlCommand(delete, conn);
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -46,8 +45,7 @@ namespace GerenciadorJogos.Forms
             List<int> codigos = new List<int>();
             List<string> nomes = new List<string>();
             //SqlConnection conn = new SqlConnection("Data Source=DESKTOP-UEQIVQ6;Initial Catalog=master;Integrated Security=True");
-            //SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gustavo.silva22\Desktop\GerenciadorJogos_CRUD\GerenciadorJogos\BD\bd.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection("Data Source=BUE205D002;Initial Catalog=BDTurmaManha;Persist Security Info=True;User ID=guest01;Password=@Senac2021");
             conn.Open();
             string select = "SELECT * FROM dbo.Jogos";
             SqlCommand cmd = new SqlCommand(select, conn);
