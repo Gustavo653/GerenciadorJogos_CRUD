@@ -36,8 +36,8 @@ namespace GerenciadorJogos.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscarJogo = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvDados = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.SuspendLayout();
             // 
             // cboCodigo
@@ -98,24 +98,24 @@ namespace GerenciadorJogos.Forms
             this.btnBuscarJogo.UseVisualStyleBackColor = true;
             this.btnBuscarJogo.Click += new System.EventHandler(this.btnBuscarJogo_Click);
             // 
-            // dataGridView1
+            // dgvDados
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 105);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 141);
-            this.dataGridView1.TabIndex = 27;
+            this.dgvDados.AllowUserToAddRows = false;
+            this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDados.Location = new System.Drawing.Point(12, 105);
+            this.dgvDados.Name = "dgvDados";
+            this.dgvDados.ReadOnly = true;
+            this.dgvDados.RowTemplate.Height = 25;
+            this.dgvDados.Size = new System.Drawing.Size(403, 141);
+            this.dgvDados.TabIndex = 27;
             // 
             // FormLocalizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 258);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.cboCodigo);
             this.Controls.Add(this.cboNome);
             this.Controls.Add(this.btnVoltar);
@@ -126,7 +126,7 @@ namespace GerenciadorJogos.Forms
             this.Name = "FormLocalizar";
             this.Text = "Localizar Jogo";
             this.Load += new System.EventHandler(this.FormLocalizar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +139,6 @@ namespace GerenciadorJogos.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscarJogo;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDados;
     }
 }

@@ -37,8 +37,8 @@ namespace GerenciadorJogos
             this.cboConsole = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnListarJogos = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvDados = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.SuspendLayout();
             // 
             // ckbListarTodos
@@ -112,25 +112,25 @@ namespace GerenciadorJogos
             this.btnListarJogos.UseVisualStyleBackColor = true;
             this.btnListarJogos.Click += new System.EventHandler(this.btnListarJogos_Click);
             // 
-            // dataGridView1
+            // dgvDados
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 144);
-            this.dataGridView1.TabIndex = 48;
+            this.dgvDados.AllowUserToAddRows = false;
+            this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.AllowUserToOrderColumns = true;
+            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDados.Location = new System.Drawing.Point(12, 102);
+            this.dgvDados.Name = "dgvDados";
+            this.dgvDados.ReadOnly = true;
+            this.dgvDados.RowTemplate.Height = 25;
+            this.dgvDados.Size = new System.Drawing.Size(403, 144);
+            this.dgvDados.TabIndex = 48;
             // 
             // FormListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 258);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.ckbListarTodos);
             this.Controls.Add(this.cboGenero);
             this.Controls.Add(this.label5);
@@ -141,8 +141,8 @@ namespace GerenciadorJogos
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormListar";
             this.Text = "Listar Jogo";
-            this.Load += new System.EventHandler(this.FormTeste_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormListar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +157,6 @@ namespace GerenciadorJogos
         private System.Windows.Forms.ComboBox cboConsole;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnListarJogos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDados;
     }
 }
